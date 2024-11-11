@@ -4,7 +4,7 @@ from telebot.handler_backends import SkipHandler as Skip
 print("\n\n\tTELEGRAM WEATHER BOT")
 
 #setting API key for telegram bot
-bot=telebot.TeleBot("6715093750:AAFsF842bo470fZy2evhu9Fj3hohgHCQirw")
+bot=telebot.TeleBot("telegram_key")
 
 @bot.message_handler(commands=['start'])
 def greet(message):
@@ -18,7 +18,7 @@ def weather(messge):
     def A3(messge):
         print(messge.text)
         city_name = str(messge.text)
-        complete_url = "http://api.openweathermap.org/data/2.5/weather?" + "appid=" + "ed93ae29452d595e94713149fda26810" + "&q=" + city_name
+        complete_url = "http://api.openweathermap.org/data/2.5/weather?" + "appid=" + "api_key" + "&q=" + city_name
         response = requests.get(complete_url)
         x = response.json()
         if x["cod"] != "404":
